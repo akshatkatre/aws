@@ -39,8 +39,8 @@ class RegisterImage(Resource):
                 DetectionAttributes=[]
                     )
         print(rekog_response)
-        #return {"Status":"RegisterImage"}
-        return jsonify(rekog_response)
+        return {"Status":"RegisterImage"}
+        #return jsonify(rekog_response)
 
 class RekognitionImage(Resource):
     def post(self):
@@ -63,10 +63,17 @@ class RekognitionImage(Resource):
                     }
                 },
                 FaceMatchThreshold = 95,
-                MaxFaces = 4
+                MaxFaces = 1
                     )
+        response_string = {}
         print(rekog_response)
-        return {"Status":"Rekognition"}
+        if len(rekog_response['FaceMatches']) > 0:
+            response_string = {'Similarity' : rekog_response['FaceMatches'][0]['Similarity']}
+            print("Similarity : {}".format(rekog_response['FaceMatches'][0]['Similarity']))
+        else:
+            response_string = {'Similarity' : 0}
+            print("face not matched")
+        return jsonify(response_string)
 
 
 
