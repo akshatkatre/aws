@@ -1,5 +1,6 @@
 # Face Recognition with AWS Rekognition
 This repository is a python implementation of the below github repo. 
+
 https://github.com/leodsti/AWS_Tutorials/tree/master/Rekognition
 
 The project consists of the UI component which is an HTML file that will send webcam image captures to two endpoints. The register endpoint will be used to save th image capture and rekognize endpoint to do similarity matches of further image captures against the registerd image.
