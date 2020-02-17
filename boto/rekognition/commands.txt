@@ -1,6 +1,6 @@
 python -m pip install --upgrade pip
 py -m venv env
-.\env\Scripts\activate
+.\env\Scripts\Activate.bat
 pip install boto3
 pip install flask
 pip install Flask-Cors
