@@ -26,10 +26,13 @@ From the command prompt run the following command:
 python server.py
 
 - This flask app has two endpoints, and accepts requests on port 5000:
+
 /register
+
 /rekognition
 
 The 'register' endpoint saves the image in S3 bucket and indexes the face.
+
 The 'rekognition' endpoint save the image in S3 bucket and invokes the search_faces_by_image method to get a similarity score.
 
 ## Run face compare
