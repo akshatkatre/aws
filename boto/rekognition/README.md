@@ -9,10 +9,15 @@ Copy and paste your AWS credentials into the file ~/.aws/credentials
 Run the below commands in windows powershell. The commands will install/upgrade pi create a virtual environment 'env'. Activate the environment and install 3 python packages needed for the application server to run.
 
 python -m pip install --upgrade pip
+
 py -m venv env
+
 .\env\Scripts\activate
+
 pip install boto3
+
 pip install flask
+
 pip install Flask-Cors
 
 ## Start the Flask application
