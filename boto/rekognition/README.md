@@ -1,4 +1,4 @@
-#Face Recognition with AWS Rekognition
+# Face Recognition with AWS Rekognition
 This repository is a python implementation of the below github repo. 
 https://github.com/leodsti/AWS_Tutorials/tree/master/Rekognition
 
