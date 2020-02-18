@@ -13,13 +13,20 @@ Below are the setup details:
 Copy and paste your AWS credentials into the file ~/.aws/credentials
 
 ## Setup Virtual environment
-Run the below commands in windows powershell. The commands will install/upgrade pi create a virtual environment 'env'. Activate the environment and install 3 python packages needed for the application server to run.
+Run the below commands in windows powershell.
 
-python -m pip install --upgrade pip
+-The commands will install/upgrade pip-upgrade pip
 
+python -m pip install 
+
+- create a virtual environment 'env'
 py -m venv env
 
+- Activate the python virtual environment
+
 .\env\Scripts\activate
+
+- install 3 python packages needed for the application server process requests.
 
 pip install boto3
 
