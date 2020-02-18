@@ -15,7 +15,7 @@ Copy and paste your AWS credentials into the file ~/.aws/credentials
 ## Setup Virtual environment
 Run the below commands in windows powershell.
 
-### The commands will install/upgrade pip-upgrade pip
+#### Install/upgrade Pip
 
 python -m pip install 
 
