@@ -11,23 +11,23 @@
 		<html>
 			<body>
 				<br/><h1>Tour Information</h1><br/><br/>
-		<!--Create table-->		
-		<table width="90%" border="1">
-			<tr style="background-color:gold">
-			<th>Trip Id</th>
-			<th>Tour</th>
-			<th>Dates</th>
-			<th>Duration</th>
-			<th>Number of Customers</th>
-			<th>Average Customer Rating</th>
-			<th>Total Collections (£)</th>
-		</tr>
-		<!--Invoke template for each Trip-->
-			<xsl:apply-templates select="TripList/Trip">
-			</xsl:apply-templates>
-		</table>
-	</body>
-	</html>
+				<!--Create table-->		
+				<table width="90%" border="1">
+					<tr style="background-color:gold">
+						<th>Trip Id</th>
+						<th>Tour</th>
+						<th>Dates</th>
+						<th>Duration</th>
+						<th>Number of Customers</th>
+						<th>Average Customer Rating</th>
+						<th>Total Collections (£)</th>
+					</tr>
+					<!--Invoke template for each Trip-->
+					<xsl:apply-templates select="TripList/Trip">
+					</xsl:apply-templates>
+				</table>
+			</body>
+		</html>
 	</xsl:template>
 	<!--This template will print at html row level the summary trip details and the summary statistics-->
 	<xsl:template match="TripList/Trip">
@@ -47,7 +47,7 @@
 			</td>
 			<!--Invoke template to get the tour duration-->
 			<td>
-			<xsl:call-template name="getTourDuration">
+				<xsl:call-template name="getTourDuration">
 					<xsl:with-param name="pTourId" select = "@TourId" />
 				</xsl:call-template>
 			</td>
