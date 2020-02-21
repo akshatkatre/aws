@@ -12,96 +12,70 @@
 	<xsl:variable name="vTripId" select="900"/>
 	<!-- Invoke template for each trip-->
 	<xsl:template match="Company">
-		<html><body>
+		<upcomming-trip>
 			<xsl:apply-templates select="TripList/Trip"/>
-		</body></html>
+		</upcomming-trip>
 	</xsl:template>
 	<!-- In this template invoke the TripGuide template only for tripid set at 
     the begining of the file-->
 	<xsl:template match="TripList/Trip">
-	
 		<xsl:if test="@Id = $vTripId">
 			<xsl:apply-templates select="TripGuides/TripGuide"/>
 		</xsl:if>
-	
 	</xsl:template>
 	<!-- The trip guide template pull details per trip-->
 	<xsl:template match="TripList/Trip/TripGuides/TripGuide">
-		<h2>Trip Details</h2>
-				<table width="100%" border="1"><tr><td>Guide Id: </td>
-					<td>
-			<xsl:value-of select="@GuideId"></xsl:value-of>
-		</td></tr>
-			<tr><td>Name</td>
-				<td>
-				<xsl:value-of select="key('TripGuideId', @GuideId)/PrimaryInformation/@FirstName"></xsl:value-of> <xsl:text> </xsl:text>
+		<letter>
+			<guideid><xsl:value-of select="@GuideId"></xsl:value-of></guideid>
+			<name>
+				<xsl:value-of select="key('TripGuideId', @GuideId)/PrimaryInformation/@FirstName"></xsl:value-of>
 				<xsl:value-of select="key('TripGuideId', @GuideId)/PrimaryInformation/@LastName"></xsl:value-of>
-			</td></tr>
-		</table>
+			</name>
 			<!-- For each guide pull information by calling additional templates-->
-			<br/>
-			<table width="100%" border="1">
-				<xsl:call-template name="getTourName"/>
-			</table>
-			<br/>
-			<table width="100%" border="1">
-				<xsl:call-template name="getTripDetails"/>
-			</table>
-			<br/>
-			<table width="100%" border="1">
-				<xsl:call-template name="getCustomerDetails"/>
-			</table>
-			<br/>
-			<table width="100%" border="1">
-				<xsl:call-template name="getTourItinerary"/>
-			</table>
-			<br/>
-			<table width="100%" border="1">
-				<xsl:call-template name="getDestinationDetails"/>
-			</table>
-			<br/>Kind Regards,<br/>
-			Tour Company<br/><hr/><br/>
+			<xsl:call-template name="getTourName"/>
+			<xsl:call-template name="getTripDetails"/>
+			<xsl:call-template name="getCustomerDetails"/>
+			<xsl:call-template name="getTourItinerary"/>
+			<xsl:call-template name="getDestinationDetails"/>
+		</letter>
 	</xsl:template>
 	<!-- This template will output the tour name based on the trip id-->
 	<xsl:template name="getTourName">
 		<xsl:variable name="vTourId" select="/Company/TripList/Trip[@Id=$vTripId]/@TourId"/>
-		<tr><td>
+		<tourname>
 			<xsl:value-of select="/Company/TourList/Tour[@Id=$vTourId]/@Name"/> 
-		</td></tr>
+		</tourname>
 	</xsl:template>
 	<!-- This template will output the trip message based on the trip id-->
 	<xsl:template name="getTripDetails">
-		<tr><td>
+		<tripmessage>
     Your Trip is scheduled from <xsl:value-of select="/Company/TripList/Trip[@Id=$vTripId]/@StartDate"/> until <xsl:value-of select="/Company/TripList/Trip[@Id=$vTripId]/@EndDate"/>
-		</td></tr>
+		</tripmessage>
 	</xsl:template>
 	<!-- This template will output the customer details based on the trip id-->
 	<xsl:template name="getCustomerDetails">
+		<customers>
 			<xsl:for-each select="/Company/TripList/Trip[@Id=$vTripId]/Participants/Customer">
-				<tr>
-					<td>
-						<xsl:value-of select="key('TripCustomerId', @CustomerId)/PrimaryInformation/@Title"></xsl:value-of> <xsl:text> </xsl:text>
-						<xsl:value-of select="key('TripCustomerId', @CustomerId)/PrimaryInformation/@FirstName"></xsl:value-of> <xsl:text> </xsl:text>
-						<xsl:value-of select="key('TripCustomerId', @CustomerId)/PrimaryInformation/@LastName"></xsl:value-of> <xsl:text> </xsl:text>
-					</td>
-					<td>
+				<customer>
+					<name>
+						<xsl:value-of select="key('TripCustomerId', @CustomerId)/PrimaryInformation/@Title"></xsl:value-of> <xsl:value-of select="key('TripCustomerId', @CustomerId)/PrimaryInformation/@FirstName"></xsl:value-of> <xsl:value-of select="key('TripCustomerId', @CustomerId)/PrimaryInformation/@LastName"></xsl:value-of> 
+					</name>
+					<mobile>
 						<xsl:value-of select="key('TripCustomerId', @CustomerId)/Contact/@MobilePhone"></xsl:value-of> 
-					</td>
-				</tr>
+					</mobile>
+				</customer>
 			</xsl:for-each>
+		</customers>
 	</xsl:template>
 	<!-- This template will output the tour ininerary based on the trip id-->
 	<xsl:template name="getTourItinerary">
-
+		<itinerary>
 			<xsl:variable name="vTourId" select="/Company/TripList/Trip[@Id=$vTripId]/@TourId"/>
 			<!--Identify the tour associated with the trip and loop through the 
 			Day elements -->
 			<xsl:for-each select="/Company/TourList/Tour[@Id=$vTourId]/TourItinerary/Day">
-				<tr>
-					<td>
-						<xsl:value-of select="@Category"/>
-						</td>
-					<td>
+				<activity>
+					<xsl:value-of select="@Category"/> : 
 					<!-- Generate a conditional output based on category
 					The Category START and FINISH  don't involve any travel
 					hence, the output content for the walking days needs to be different
@@ -124,9 +98,9 @@
 							<xsl:value-of select="/Company/DestinationList/Destination[@Id=$vStartDest]/@DestinationName"/> to <xsl:value-of select="/Company/DestinationList/Destination[@Id=$vEndDest]/@DestinationName"/>,  <xsl:value-of select="@NoOfMiles"/> miles.
 						</xsl:otherwise>
 					</xsl:choose>
-					</td>
-				</tr>
+				</activity>
 			</xsl:for-each>
+		</itinerary>
 	</xsl:template>	
 	<!-- this template will output the destination details.
 	First identify the tour based on the tripId
@@ -139,26 +113,26 @@
 			<xsl:for-each select="/Company/TourList/Tour[@Id=$vTourId]/TourItinerary/Day">
 
 				<xsl:if test="@Category != 'START'">
-					<tr>
-						<td><xsl:value-of select="@StartDestinationId"></xsl:value-of></td>
-						<td><xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/@DestinationName"></xsl:value-of> 
-						</td>
-						<td>
+					<destination>
+						<id><xsl:value-of select="@StartDestinationId"></xsl:value-of></id>
+						<name><xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/@DestinationName"></xsl:value-of> 
+						</name>
+						<type>
 							<xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/@DestinationType"/>
-						</td>
-						<td>
+						</type>
+						<email>
 							<xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Contact/@EmailId"/>
-						</td>
-						<td>
+						</email>
+						<mobile>
 							<xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Contact/@MobilePhone"/>
-						</td>
-						<td>
+						</mobile>
+						<address>
 							<xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Address/@AddressLine1"/>,
 							<xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Address/@AddressLine2"/>,
 							<xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Address/@PostCode"/>,
 							<xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Address/@Country"/>
-						</td>
-					</tr>
+						</address>
+					</destination>
 				</xsl:if>
 
 			</xsl:for-each>

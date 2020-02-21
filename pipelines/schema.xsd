@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Company">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CustomerList" type="CustomerListType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="GuideList" type="GuideListType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="DestinationList" type="DestinationListType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="TourList" type="TourListType" minOccurs="0" maxOccurs="1"/>	
+				<xs:element name="TripList" type="TripListType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:keyref name="StartDestinationIdReference" refer="DestinationId">
+			<xs:selector xpath="TourList/Tour/TourItinerary/Day"/>
+			<xs:field xpath="@StartDestinationId"/>
+		</xs:keyref> 
+		<xs:keyref name="EndDestinationIdReference" refer="DestinationId">
+			<xs:selector xpath="TourList/Tour/TourItinerary/Day"/>
+			<xs:field xpath="@EndDestinationId"/>
+		</xs:keyref> 
+		<xs:key name="DestinationId">
+			<xs:selector xpath="DestinationList/Destination"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>
+		<xs:keyref name="CertifiedTourGuideIdReference" refer="GuideId">
+			<xs:selector xpath="TourList/Tour/CertifiedGuides/Guide"/>
+			<xs:field xpath="@GuideId"/>
+		</xs:keyref> 	
+		<xs:key name="GuideId">
+			<xs:selector xpath="GuideList/Guide"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>		
+		<xs:keyref name="TripCustomerReference" refer="CustomerId">
+			<xs:selector xpath="TripList/Trip/Participants/Customer"/>
+			<xs:field xpath="@CustomerId"/>
+		</xs:keyref> 			
+		<xs:key name="CustomerId">
+			<xs:selector xpath="CustomerList/Customer"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>	
+		<xs:keyref name="TripTourReference" refer="TourId">
+			<xs:selector xpath="TripList/Trip"/>
+			<xs:field xpath="@TourId"/>
+		</xs:keyref> 	
+		<xs:keyref name="TripGuideReference" refer="GuideId">
+			<xs:selector xpath="TripList/Trip/TripGuides/TripGuide"/>
+			<xs:field xpath="@GuideId"/>
+		</xs:keyref> 		
+		<xs:key name="TourId">
+			<xs:selector xpath="TourList/Tour"/>
+			<xs:field xpath="@Id"/>
+		</xs:key>			
+	</xs:element>
+	<xs:complexType name="CustomerListType">
+		<xs:sequence>
+			<xs:element name="Customer" type="CustomerType" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CustomerType">
+		<xs:sequence>
+			<xs:element ref="PrimaryInformation"/>
+			<xs:element ref="Contact"/>
+			<xs:element ref="Address"/>
+		</xs:sequence>
+		<xs:attribute name="Id" type="xs:integer"/>
+	</xs:complexType>
+	<!--guides-->
+	<xs:complexType name="GuideListType">
+		<xs:sequence>
+			<xs:element name="Guide" type="GuideType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GuideType">
+		<xs:sequence>
+			<xs:element name="Skills" type="SkillsType"/>
+			<xs:element ref="PrimaryInformation"/>
+			<xs:element ref="Contact"/>
+			<xs:element ref="Address"/>
+		</xs:sequence>
+		<xs:attribute name="Id" type="xs:integer"/>
+	</xs:complexType>
+	<xs:complexType name="SkillsType">
+		<xs:sequence>
+			<xs:element name="Skill"  minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute type="xs:string" name="Details"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>		
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--guides end-->	
+	<!--destination start-->
+	<xs:complexType name="DestinationListType">
+		<xs:sequence>
+			<xs:element name="Destination" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Contact"/>
+						<xs:element ref="Address"/>
+					</xs:sequence>
+
+					<xs:attribute name="Id" type="xs:integer"/>
+					<xs:attribute name="DestinationName" type="xs:string"/>
+					<xs:attribute name="DestinationType" type="xs:string"/>
+					<xs:attribute name="Access" type="xs:string"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--destination end-->
+	<!--Tour start-->
+	<xs:complexType name="TourListType">
+		<xs:sequence>
+			<xs:element name="Tour" type="TourType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TourType">
+		<xs:sequence>
+			<xs:element name="TourFacts" type="TourFactsType" />
+			<xs:element name="TourDescription" type="TourDescriptionType" />
+			<xs:element name="TourItinerary" type="TourItineraryType" />
+			<xs:element name="AdditionalInformationList" type="AdditionalInformationListType" />
+			<xs:element name="CertifiedGuides" type="CertifiedGuidesType"/>
+		</xs:sequence>
+		<xs:attribute name="Id" type="xs:integer"/>
+		<xs:attribute name="Name" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="TourFactsType">
+		<xs:attribute name="NoOfDays" type="xs:integer"/>
+		<xs:attribute name="NoOfNights" type="xs:integer"/>
+		<xs:attribute name="Difficulty" type="xs:string"/>
+		<xs:attribute name="IsDogFriendly" type="xs:boolean"/>
+		<xs:attribute name="IsAllYear" type="xs:boolean"/>
+		<xs:attribute name="Minimum" type="xs:integer"/>
+		<xs:attribute name="Maximum" type="xs:integer"/>
+		<xs:attribute name="CostPerPerson" type="xs:float"/>
+		<xs:attribute name="StartDestination" type="xs:integer"/>
+		<xs:attribute name="EndDestination" type="xs:integer"/>
+	</xs:complexType>
+	<xs:complexType name="TourDescriptionType">
+		<xs:attribute name="ShortDescription" type="xs:string"/>
+		<xs:attribute name="ExtendedDiscription" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="TourItineraryType">
+		<xs:sequence>
+			<xs:element name="Day" type="DayType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DayType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="Category" type="xs:string"/>
+				<xs:attribute name="SequenceNo" type="xs:integer"/>
+				<xs:attribute name="StartDestinationId" type="xs:integer"/>
+				<xs:attribute name="EndDestinationId" type="xs:integer"/>
+				<xs:attribute name="NoOfMiles" type="xs:float"/>
+				<xs:attribute name="Activities" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>	
+	</xs:complexType>
+	<xs:complexType name="AdditionalInformationListType">
+		<xs:sequence>
+			<xs:element name="AdditionalInformation" type="AdditionalInformationType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AdditionalInformationType">
+		<xs:attribute name="Category">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="INCLUSIONS" />
+					<xs:enumeration value="EXTRA_NIGHTS" />
+					<xs:enumeration value="TRAVEL_INFO" />
+					<xs:enumeration value="WEATHER" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Details" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="CertifiedGuidesType">
+		<xs:sequence>
+			<xs:element name="Guide" type="TourGuideType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TourGuideType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="GuideId" type="xs:integer"/>
+			</xs:extension>
+		</xs:simpleContent>	
+	</xs:complexType>		
+	<!--Tour end-->	
+	<xs:complexType name="TripListType">
+		<xs:sequence>
+			<xs:element name="Trip" type="TripType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>	
+	<xs:complexType name="TripType">
+		<xs:sequence>
+			<xs:element name="TripGuides" type="TripGuidesType" />
+			<xs:element name="Participants" type="ParticipantsType" />
+		</xs:sequence>
+		<xs:attribute name="Id" type="xs:integer"/>
+		<xs:attribute name="TourId" type="xs:integer"/>
+		<xs:attribute name="StartDate" type="xs:date"/>
+		<xs:attribute name="EndDate" type="xs:date"/>
+	</xs:complexType>	
+	<xs:complexType name="TripGuidesType">
+		<xs:sequence>
+			<xs:element name="TripGuide" type="TripGuideType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>	
+	<xs:complexType name="TripGuideType">
+		<xs:attribute name="GuideId" type="xs:integer"/>
+	</xs:complexType>		
+	<xs:complexType name="ParticipantsType">
+		<xs:sequence>
+			<xs:element name="Customer" type="TripCustomerType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>		
+	<xs:complexType name="TripCustomerType">
+		<xs:attribute name="CustomerId" type="xs:integer"/>
+		<xs:attribute name="SatisfactionScore" type="xs:integer"/>
+	</xs:complexType>	
+
+	<!--Trip end-->
+	<xs:element name="PrimaryInformation">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute type="xs:string" name="Title"/>
+					<xs:attribute type="xs:string" name="FirstName" use="required"/>
+					<xs:attribute type="xs:string" name="LastName" use="required"/>
+					<xs:attribute type="xs:date" name="DateOfBirth" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Contact">
+		<xs:complexType >
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute type="xs:string" name="EmailId" use="required"/>
+					<xs:attribute type="xs:string" name="MobilePhone" use="required"/>
+					<xs:attribute type="xs:string" name="Landline" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Address">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute type="xs:string" name="AddressLine1" use="required"/>
+					<xs:attribute type="xs:string" name="AddressLine2" />
+					<xs:attribute type="xs:string" name="AddressLine3" />
+					<xs:attribute type="xs:string" name="AddressLine4" />
+					<xs:attribute type="xs:string" name="Region" />
+					<xs:attribute type="xs:string" name="PostCode" use="required"/>
+					<xs:attribute type="xs:string" name="Country" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+<!--
+https://www.w3schools.com/xml/el_element.asp
+https://stackoverflow.com/questions/9876959/how-to-declare-an-attribute-id-in-xml
+https://stackoverflow.com/questions/31210735/how-to-add-multiple-attribute-in-single-element-using-xsd
+https://stackoverflow.com/questions/38711466/xsdcomplextype-with-children-attributes-and-restrictions
+-->
