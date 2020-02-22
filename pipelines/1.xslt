@@ -10,13 +10,14 @@
 	<xsl:template match="Company">
 		<html>
 			<body>
-				<br/><h1>Tour Information</h1><br/><br/>
+				<br/><h1>Tour Statistics</h1><br/><br/>
 				<!--Create table-->		
 				<table width="90%" border="1">
 					<tr style="background-color:gold">
 						<th>Trip Id</th>
 						<th>Tour</th>
-						<th>Dates</th>
+						<th>Start Date</th>
+						<th>End Date</th>
 						<th>Duration</th>
 						<th>Number of Customers</th>
 						<th>Average Customer Rating</th>
@@ -43,7 +44,10 @@
 			</td>
 			<!--Print Start and End Dates of the trip -->
 			<td>
-				<xsl:value-of select="@StartDate" /> - <xsl:value-of select="@EndDate" />
+				<xsl:value-of select="@StartDate" /> 
+			</td>
+			<td>
+				<xsl:value-of select="@EndDate" />
 			</td>
 			<!--Invoke template to get the tour duration-->
 			<td>
@@ -58,7 +62,7 @@
 			<!--To get the average satisfaction score sum the satisfaction score and divde my number
 			of participating customers -->
 			<td>
-				<xsl:value-of select="sum(Participants/Customer/@SatisfactionScore) div count(Participants/Customer)"/>
+				<xsl:value-of select="format-number((sum(Participants/Customer/@SatisfactionScore) div count(Participants/Customer)),'#.0')"/>
 			</td>
 			<!--To get the total collect multiply the number of participants with the cost for the
 			tour. Do a key lookup to get the tour element. -->
