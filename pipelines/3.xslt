@@ -27,36 +27,55 @@
 	</xsl:template>
 	<!-- The trip guide template pull details per trip-->
 	<xsl:template match="TripList/Trip/TripGuides/TripGuide">
-		<h2>Trip Details</h2>
-				<table width="100%" border="1"><tr><td>Guide Id: </td>
-					<td>
+		<h2>Trip Details - Guides Version</h2>
+				<table width="100%"><tr><td width="10%">Guide Id: </td>
+					<td >
 			<xsl:value-of select="@GuideId"></xsl:value-of>
 		</td></tr>
-			<tr><td>Name</td>
+			<tr><td>Trip Id</td>
 				<td>
-				<xsl:value-of select="key('TripGuideId', @GuideId)/PrimaryInformation/@FirstName"></xsl:value-of> <xsl:text> </xsl:text>
-				<xsl:value-of select="key('TripGuideId', @GuideId)/PrimaryInformation/@LastName"></xsl:value-of>
+					<xsl:value-of select="$vTripId"/>
 			</td></tr>
+		</table>
+		<br/>
+		<table width="100%">
+			<!-- Output customer details from the Customer entity-->
+			<tr><td>
+				Dear <xsl:value-of select="key('TripGuideId', @GuideId)/PrimaryInformation/@FirstName"></xsl:value-of> <xsl:text> </xsl:text>
+				<xsl:value-of select="key('TripGuideId', @GuideId)/PrimaryInformation/@LastName"></xsl:value-of>,<br/>
+				Your tour is fast approaching!<br/>
+				This mailer has information related to the trip that you will be conducting.
+				</td>
+			</tr>
 		</table>
 			<!-- For each guide pull information by calling additional templates-->
 			<br/>
-			<table width="100%" border="1">
+			<table width="100%">
 				<xsl:call-template name="getTourName"/>
 			</table>
-			<br/>
-			<table width="100%" border="1">
+			<table width="100%">
 				<xsl:call-template name="getTripDetails"/>
 			</table>
 			<br/>
+			<h3>Customer Information</h3>
 			<table width="100%" border="1">
+				<th width="20%">Name</th><th>Mobile Number</th>
 				<xsl:call-template name="getCustomerDetails"/>
 			</table>
 			<br/>
+			<h3>Tour Itinerary</h3>
 			<table width="100%" border="1">
 				<xsl:call-template name="getTourItinerary"/>
 			</table>
 			<br/>
+			<h3>Destination Details</h3>
 			<table width="100%" border="1">
+				<th>No</th>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Email Id</th>
+				<th>Mobile #</th>
+				<th>Address</th>
 				<xsl:call-template name="getDestinationDetails"/>
 			</table>
 			<br/>Kind Regards,<br/>
@@ -66,7 +85,7 @@
 	<xsl:template name="getTourName">
 		<xsl:variable name="vTourId" select="/Company/TripList/Trip[@Id=$vTripId]/@TourId"/>
 		<tr><td>
-			<xsl:value-of select="/Company/TourList/Tour[@Id=$vTourId]/@Name"/> 
+			You will be leading the tour: <b><xsl:value-of select="/Company/TourList/Tour[@Id=$vTourId]/@Name"/></b> 
 		</td></tr>
 	</xsl:template>
 	<!-- This template will output the trip message based on the trip id-->
