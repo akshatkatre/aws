@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Company xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
+	<CustomerList>
+		<Customer Id="100">
+			<PrimaryInformation Title="Mr" FirstName="Johnathan" LastName="Smith" DateOfBirth="1968-12-01"/>
+			<Contact EmailId="Johnathan.Smith@somedomain.com" MobilePhone="566093" Landline="9939393"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="SL1" Country="GB"/>
+		</Customer>
+		<Customer Id="101">
+			<PrimaryInformation Title="Mrs" FirstName="Milly" LastName="Cook" DateOfBirth="1968-12-01"/>
+			<Contact EmailId="Milly.Cook@somedomain.com" MobilePhone="0789918899" Landline="99319393"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="SL1" Country="GB"/>
+		</Customer>
+		<Customer Id="102">
+			<PrimaryInformation Title="Mrs" FirstName="Joel " LastName="Reed" DateOfBirth="1978-12-01"/>
+			<Contact EmailId="Joel.Reed@somedomain.com" MobilePhone="08393931" Landline="99319393"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="wl2" Country="GB"/>
+		</Customer>		
+		<Customer Id="104">
+			<PrimaryInformation Title="Mr" FirstName="Eric" LastName="Shuman" DateOfBirth="1968-12-01"/>
+			<Contact EmailId="Eric.Shuman@somedomain.com" MobilePhone="2032002" Landline="9939393"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="SL1" Country="GB"/>
+		</Customer>
+		<Customer Id="105">
+			<PrimaryInformation Title="Mrs" FirstName="Jenny" LastName="Smith" DateOfBirth="1968-12-01"/>
+			<Contact EmailId="Jenny.Smith@somedomain.com" MobilePhone="677748830" Landline="99319393"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="SL1" Country="GB"/>
+		</Customer>
+		<Customer Id="106">
+			<PrimaryInformation Title="Mr" FirstName="Rowan" LastName="Boyle" DateOfBirth="1978-12-01"/>
+			<Contact EmailId="Rowan.Boyle@somedomain.com" MobilePhone="3993827" Landline="99319393"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="wl2" Country="GB"/>
+		</Customer>	
+		<Customer Id="107">
+			<PrimaryInformation Title="Miss" FirstName="Stacey" LastName="Durham" DateOfBirth="1968-12-01"/>
+			<Contact EmailId="Stacey.Durham@somedomain.com" MobilePhone="90002000" Landline="9939393"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="SL1" Country="GB"/>
+		</Customer>
+		<Customer Id="108">
+			<PrimaryInformation Title="Mr" FirstName="Cleo" LastName="Carson" DateOfBirth="1968-12-01"/>
+			<Contact EmailId="Cleo.Carson@somedomain.com" MobilePhone="205666785" Landline="99319393"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="SL1" Country="GB"/>
+		</Customer>
+		<Customer Id="109">
+			<PrimaryInformation Title="Miss" FirstName="Holly" LastName="Wilson" DateOfBirth="1978-12-01"/>
+			<Contact EmailId="Holly.Wilson@somedomain.com" MobilePhone="9663325479" Landline="99319393"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="wl2" Country="GB"/>
+		</Customer>		
+		<Customer Id="110">
+			<PrimaryInformation Title="Miss" FirstName="Daniella" LastName="Padilla" DateOfBirth="1968-12-01"/>
+			<Contact EmailId="Daniella.Padilla@somedomain.com" MobilePhone="839399693" Landline="9939393"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="SL1" Country="GB"/>
+		</Customer>
+		<Customer Id="111">
+			<PrimaryInformation Title="Mr" FirstName="Felix" LastName="Mendez" DateOfBirth="1968-12-01"/>
+			<Contact EmailId="Felix.Mendez@somedomain.com" MobilePhone="66666931" Landline="99319393"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="SL1" Country="GB"/>
+		</Customer>
+		<Customer Id="112">
+			<PrimaryInformation Title="Mrs" FirstName="Evangeline" LastName="Blake" DateOfBirth="1978-12-01"/>
+			<Contact EmailId="Evangeline.Blake@somedomain.com" MobilePhone="559983931" Landline="99319393"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="wl2" Country="GB"/>
+		</Customer>			
+	</CustomerList>
+	<GuideList>
+		<Guide Id="1200">
+			<Skills>
+				<Skill Details="First Aid"/>
+				<Skill Details="Mountain Class 1"/>
+			</Skills>
+			<PrimaryInformation Title="Miss" FirstName="Kelly" LastName="Armstorng" DateOfBirth="1990-12-01"/>
+			<Contact EmailId="Kelly.Armstorng@somedomain.com" MobilePhone="180093" Landline="9933"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="W01" Country="GB"/>
+		</Guide>
+		<Guide Id="1201">
+			<Skills>
+				<Skill Details="First Aid"/>
+				<Skill Details="Mountain Class 1"/>
+			</Skills>
+			<PrimaryInformation Title="Mr" FirstName="Marshal" LastName="Ulrich" DateOfBirth="1960-12-01"/>
+			<Contact EmailId="Marshal.Ulrich@somedomain.com" MobilePhone="2380093" Landline="9933"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="W01" Country="GB"/>
+		</Guide>
+		<Guide Id="1202">
+			<Skills>
+				<Skill Details="First Aid"/>
+				<Skill Details="Mountain Class 1"/>
+			</Skills>
+			<PrimaryInformation Title="Mr" FirstName="Jason" LastName="Bourne" DateOfBirth="1970-12-01"/>
+			<Contact EmailId="Jason.Bourne@somedomain.com" MobilePhone="89880093" Landline="9933"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="W01" Country="GB"/>
+		</Guide>	
+		<Guide Id="1204">
+			<Skills>
+				<Skill Details="First Aid"/>
+				<Skill Details="Mountain Class 1"/>
+			</Skills>
+			<PrimaryInformation Title="Miss" FirstName="Jenny" LastName="Armstorng" DateOfBirth="1990-12-01"/>
+			<Contact EmailId="Jenny.armstrong@company.com" MobilePhone="776380093" Landline="9933"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="W01" Country="GB"/>
+		</Guide>
+		<Guide Id="1205">
+			<Skills>
+				<Skill Details="First Aid"/>
+				<Skill Details="Mountain Class 1"/>
+			</Skills>
+			<PrimaryInformation Title="Mr" FirstName="Richard" LastName="Feynman" DateOfBirth="1960-12-01"/>
+			<Contact EmailId="Richard.Feynman@somedomain.com" MobilePhone="567980093" Landline="9933"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="W01" Country="GB"/>
+		</Guide>
+		<Guide Id="1206">
+			<Skills>
+				<Skill Details="First Aid"/>
+				<Skill Details="Mountain Class 1"/>
+			</Skills>
+			<PrimaryInformation Title="Mr" FirstName="Lucius" LastName="Feltman" DateOfBirth="1970-12-01"/>
+			<Contact EmailId="Lucius.Feltman@somedomain.com" MobilePhone="327880093" Landline="9933"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="W01" Country="GB"/>
+		</Guide>	
+		<Guide Id="1207">
+			<Skills>
+				<Skill Details="First Aid"/>
+				<Skill Details="Mountain Class 1"/>
+			</Skills>
+			<PrimaryInformation Title="Miss" FirstName="Missy" LastName="Carlton" DateOfBirth="1990-12-01"/>
+			<Contact EmailId="Missy.Carlton@somedomain.com" MobilePhone="987680093" Landline="9933"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="W01" Country="GB"/>
+		</Guide>
+		<Guide Id="1208">
+			<Skills>
+				<Skill Details="First Aid"/>
+				<Skill Details="Mountain Class 1"/>
+			</Skills>
+			<PrimaryInformation Title="Mr" FirstName="James" LastName="Bose" DateOfBirth="1960-12-01"/>
+			<Contact EmailId="James.Bose@somedomain.com" MobilePhone="3325480093" Landline="9933"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="W01" Country="GB"/>
+		</Guide>
+		<Guide Id="1209">
+			<Skills>
+				<Skill Details="First Aid"/>
+				<Skill Details="Mountain Class 1"/>
+			</Skills>
+			<PrimaryInformation Title="Mr" FirstName="Rick" LastName="Coffee" DateOfBirth="1970-12-01"/>
+			<Contact EmailId="Rick.Coffee@somedomain.com" MobilePhone="9963280093" Landline="9933"/>
+			<Address AddressLine1="Line 1" AddressLine2="" AddressLine3="" AddressLine4="" Region="" PostCode="W01" Country="GB"/>
+		</Guide>			
+	</GuideList>
+	<DestinationList>
+		<Destination Id="1" DestinationName="Ayr" DestinationType="BnB" Access="">
+			<Contact EmailId="contacts@ayr.com" MobilePhone="10039993" Landline="33434"/>
+			<Address AddressLine1="1 High Street" AddressLine2="Ayr" AddressLine3="" AddressLine4="" Region="" PostCode="AY01" Country="GB"/>
+		</Destination>
+		<Destination Id="2" DestinationName="Irvine" DestinationType="BnB" Access="">
+			<Contact EmailId="contacts@@Irvine.com" MobilePhone="089995993" Landline="33434"/>
+			<Address AddressLine1="2 High Street" AddressLine2="Irvine" AddressLine3="" AddressLine4="" Region="" PostCode="IR01" Country="GB"/>
+		</Destination>
+		<Destination Id="3" DestinationName="Ardrossan" DestinationType="BnB" Access="">
+			<Contact EmailId="contacts@Ardrossan.com" MobilePhone="70899939993" Landline="33434"/>
+			<Address AddressLine1="3 High Street" AddressLine2="Ardrossan" AddressLine3="" AddressLine4="" Region="" PostCode="AR01" Country="GB"/>
+		</Destination>
+		<Destination Id="4" DestinationName="Largs" DestinationType="BnB" Access="">
+			<Contact EmailId="ft.1@Largs.com" MobilePhone="40049993" Landline="33434"/>
+			<Address AddressLine1="4 High Street" AddressLine2="Largs" AddressLine3="" AddressLine4="" Region="" PostCode="LA01" Country="GB"/>
+		</Destination>
+		<Destination Id="11" DestinationName="Ludlow " DestinationType="Hotel" Access="">
+			<Contact EmailId="frontdesk@Ludlow.com" MobilePhone="787976648" Landline="33434"/>
+			<Address AddressLine1="11 High Street" AddressLine2="Ludlow" AddressLine3="" AddressLine4="" Region="" PostCode="LU01" Country="GB"/>
+		</Destination>
+		<Destination Id="12" DestinationName="Aymestrey" DestinationType="BnB" Access="">
+			<Contact EmailId="manager@Aymestrey.co.uk" MobilePhone="847339" Landline="33434"/>
+			<Address AddressLine1="12 High Street" AddressLine2="Aymestrey" AddressLine3="" AddressLine4="" Region="" PostCode="AY01" Country="GB"/>
+		</Destination>
+		<Destination Id="13" DestinationName="Kington" DestinationType="Hotel" Access="">
+			<Contact EmailId="fdesk@Kington.com" MobilePhone="99998866" Landline="33434"/>
+			<Address AddressLine1="13 High Street" AddressLine2="Kington" AddressLine3="" AddressLine4="" Region="" PostCode="KI01" Country="GB"/>
+		</Destination>		
+	</DestinationList>
+	<TourList>
+		<Tour Id="1" Name="Ayrshire Coastal Path - North Section">
+			<TourFacts NoOfDays="4" NoOfNights="3" Difficulty="Moderate / Demanding" IsDogFriendly="false" IsAllYear="false" Minimum="3" Maximum="10" CostPerPerson="295.00"/>
+			<TourDescription ShortDescription="This itinerary lists our preferred overnight stops for this tour. Sometimes there may be a shortage of available accommodation in a preferred location, in which case we will transfer you from the trail to your accommodation and back again at no extra charge. Overnight stops marked with a (T) will always require transfers as standard." ExtendedDiscription="This itinerary lists our preferred overnight stops for this tour. Sometimes there may be a shortage of available accommodation in a preferred location, in which case we will transfer you from the trail to your accommodation and back again at no extra charge. Overnight stops marked with a (T) will always require transfers as standard.
+				
+Overnight stops marked with an (L) have very limited accommodation, and therefore more often than not will also require a transfer, particularly on bank holidays and weekends. We will use non-transfer accommodation wherever possible."/>
+			<TourItinerary>
+				<Day Category="START" SequenceNo="1" StartDestinationId="1" EndDestinationId="1" NoOfMiles="0" Activities=""/>
+				<Day Category="Day 1" SequenceNo="2" StartDestinationId="1" EndDestinationId="2"  NoOfMiles="14" Activities=""/>
+				<Day Category="Day 2" SequenceNo="3" StartDestinationId="2" EndDestinationId="3"  NoOfMiles="10.5" Activities=""/>
+				<Day Category="Day 3" SequenceNo="4" StartDestinationId="3" EndDestinationId="4"  NoOfMiles="13.5" Activities=""/>
+				<Day Category="FINISH" SequenceNo="5" StartDestinationId="4" EndDestinationId="4"  NoOfMiles="0.0" Activities=""/>				
+			</TourItinerary>
+
+
+			<AdditionalInformationList>
+				<!--INCLUSIONS, EXTRA_NIGHTS, TRAVEL_INFO, WEATHER-->
+				<AdditionalInformation Category="INCLUSIONS" Details="Breakfast each day."/>
+				<AdditionalInformation Category="EXTRA_NIGHTS" Details="Taking an extra night along the trail is a wonderful way to explore the sights and sounds of the area.
+					
+Ludlow is a popular choice for an extra day. Nestled on the River Teme, the surrounding countryside is spectacular and is a perfect match for this pretty town, awash with ancient buildings such as St Laurence's Parish Church, The Reader's House, the ruins of Ludlow Castle and the world famous Feathers Hotel, with its dramatic timber facade. "/>
+				<AdditionalInformation Category="TRAVEL_INFO" Details="Useful information and travel links that will assist you in your plans to travel to the start of the holiday and back from the end of it are sent to you with your full tour pack. A summary is given below:
+					
+By Air - The most convenient major city and international airports are Glasgow and Glasgow Prestwick.
+					
+By Rail - There is a rail station at the start of the trail (Ayr) and also at the end of the trail (Largs).
+					
+By Bus - Various bus services run to Ayr and from Largs.
+					
+From London - Trains run from London Euston station to Ayr.
+					
+Return To The Start - The easiest way to return to the start of the trail, is to take the train from Largs to Ayr. "/>
+				<AdditionalInformation Category="WEATHER" Details="To find out more about the weather forecast for your chosen holiday's general location, please see the following websites:
+					
+    MetCheck - This website allows you to look up detailed weather information for specific locations as far as six months in advance. "/>
+			</AdditionalInformationList>
+
+			<CertifiedGuides>
+				<Guide GuideId="1201"/>
+				<Guide GuideId="1202"/>
+			</CertifiedGuides>
+
+		</Tour>
+		<Tour Id="9" Name="Mortimer Trail">
+			<TourFacts NoOfDays="3" NoOfNights="2" Difficulty="Moderate / Demanding" IsDogFriendly="false" IsAllYear="false" Minimum="3" Maximum="10" CostPerPerson="325.00"/>
+			<TourDescription ShortDescription="This itinerary lists our preferred overnight stops for this tour. Sometimes there may be a shortage of available accommodation in a preferred location, in which case we will transfer you from the trail to your accommodation and back again at no extra charge. Overnight stops marked with a (T) will always require transfers as standard." ExtendedDiscription="This itinerary lists our preferred overnight stops for this tour. Sometimes there may be a shortage of available accommodation in a preferred location, in which case we will transfer you from the trail to your accommodation and back again at no extra charge. Overnight stops marked with a (T) will always require transfers as standard.
+				
+Overnight stops marked with an (L) have very limited accommodation, and therefore more often than not will also require a transfer, particularly on bank holidays and weekends. We will use non-transfer accommodation wherever possible."/>
+			<TourItinerary>
+				<Day Category="START" SequenceNo="11" StartDestinationId="11" EndDestinationId="11" NoOfMiles="0" Activities="Travel to Ludlow where your first night's accommodation has been booked"/>
+				<Day Category="Day 1" SequenceNo="11" StartDestinationId="11" EndDestinationId="12"  NoOfMiles="14" Activities=""/>
+				<Day Category="Day 2" SequenceNo="12" StartDestinationId="12" EndDestinationId="13"  NoOfMiles="10.5" Activities=""/>
+				<Day Category="FINISH" SequenceNo="13" StartDestinationId="13" EndDestinationId="13"  NoOfMiles="13.5" Activities=""/>		
+			</TourItinerary>
+
+			<AdditionalInformationList>
+				<!--INCLUSIONS, EXTRA_NIGHTS, TRAVEL_INFO, WEATHER-->
+				<AdditionalInformation Category="INCLUSIONS" Details="Breakfast each day."/>
+				<AdditionalInformation Category="EXTRA_NIGHTS" Details="Taking an extra night along the trail is a wonderful way to explore the sights and sounds of the area.
+					
+Ludlow is a popular choice for an extra day. Nestled on the River Teme, the surrounding countryside is spectacular and is a perfect match for this pretty town, awash with ancient buildings such as St Laurence's Parish Church, The Reader's House, the ruins of Ludlow Castle and the world famous Feathers Hotel, with its dramatic timber facade. "/>
+				<AdditionalInformation Category="TRAVEL_INFO" Details="Useful information and travel links that will assist you in your plans to travel to the start of the holiday and back from the end of it are sent to you with your full tour pack. A summary is given below:
+					
+By Air - The most convenient major city and international airports are Birmingham, Bristol and Cardiff.
+					
+By Rail - There is a rail station at the start of the trail (Ludlow). The nearest rail stations to the end of the trail (Kington) are either Knighton (about 12.5 miles away) or Hereford (about 21 miles away).
+					
+By Bus - Various bus services run to Ludlow and from Kington.
+					
+From London - Trains run from London Euston and London Paddington stations to Ludlow.
+					
+Return To The Start - The easiest way to return to the start of the trail, is to take a bus/taxi from Kington to Hereford rail station. From there trains run to Ludlow. "/>
+				<AdditionalInformation Category="WEATHER" Details="To find out more about the weather forecast for your chosen holiday's general location, please see the following websites:
+					
+    MetCheck - This website allows you to look up detailed weather information for specific locations as far as six months in advance. "/>
+			</AdditionalInformationList>
+
+			<CertifiedGuides>
+				<Guide GuideId="1208"/>
+				<Guide GuideId="1209"/>
+			</CertifiedGuides>
+
+		</Tour>		
+	</TourList>	
+	<TripList>
+		<Trip Id="900" TourId="1" StartDate="2019-08-05" EndDate="2019-08-10" >
+			<TripGuides>
+				<TripGuide GuideId="1201"/>
+				<TripGuide GuideId="1202"/>
+			</TripGuides>
+			<Participants>
+				<Customer CustomerId="101" SatisfactionScore="8"/>
+				<Customer CustomerId="102" SatisfactionScore="9"/>
+				<Customer CustomerId="100" SatisfactionScore="10"/>
+			</Participants>
+		</Trip>
+	</TripList>
+	<TripList>
+		<Trip Id="901" TourId="9" StartDate="2018-08-05" EndDate="2019-08-10" >
+			<TripGuides>
+				<TripGuide GuideId="1205"/>
+				<TripGuide GuideId="1206"/>
+			</TripGuides>
+			<Participants>
+				<Customer CustomerId="107" SatisfactionScore="8"/>
+				<Customer CustomerId="104" SatisfactionScore="9"/>
+				<Customer CustomerId="105" SatisfactionScore="10"/>
+				<Customer CustomerId="112" SatisfactionScore="5"/>
+			</Participants>
+		</Trip>
+		<Trip Id="903" TourId="1" StartDate="2019-10-05" EndDate="2019-08-10" >
+			<TripGuides>
+				<TripGuide GuideId="1209"/>
+				<TripGuide GuideId="1204"/>
+			</TripGuides>
+			<Participants>
+				<Customer CustomerId="101" SatisfactionScore="8"/>
+				<Customer CustomerId="102" SatisfactionScore="9"/>
+				<Customer CustomerId="104" SatisfactionScore="10"/>
+				<Customer CustomerId="105" SatisfactionScore="7"/>
+				<Customer CustomerId="106" SatisfactionScore="9"/>
+				<Customer CustomerId="107" SatisfactionScore="10"/>
+			</Participants>
+		</Trip>
+	</TripList>
+	<TripList>
+		<Trip Id="904" TourId="9" StartDate="2018-10-05" EndDate="2019-08-10" >
+			<TripGuides>
+				<TripGuide GuideId="1207"/>
+				<TripGuide GuideId="1208"/>
+			</TripGuides>
+			<Participants>
+				<Customer CustomerId="102" SatisfactionScore="9"/>
+				<Customer CustomerId="107" SatisfactionScore="8"/>
+				<Customer CustomerId="104" SatisfactionScore="9"/>
+				<Customer CustomerId="105" SatisfactionScore="10"/>
+				<Customer CustomerId="112" SatisfactionScore="5"/>
+			</Participants>
+		</Trip>
+	</TripList>
+</Company>

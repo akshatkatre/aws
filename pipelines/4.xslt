@@ -28,8 +28,7 @@
 		<letter>
 			<guideid><xsl:value-of select="@GuideId"></xsl:value-of></guideid>
 			<name>
-				<xsl:value-of select="key('TripGuideId', @GuideId)/PrimaryInformation/@FirstName"></xsl:value-of>
-				<xsl:value-of select="key('TripGuideId', @GuideId)/PrimaryInformation/@LastName"></xsl:value-of>
+				<xsl:value-of select="key('TripGuideId', @GuideId)/PrimaryInformation/@FirstName"></xsl:value-of><xsl:text> </xsl:text><xsl:value-of select="key('TripGuideId', @GuideId)/PrimaryInformation/@LastName"></xsl:value-of>
 			</name>
 			<!-- For each guide pull information by calling additional templates-->
 			<xsl:call-template name="getTourName"/>
@@ -58,7 +57,7 @@
 			<xsl:for-each select="/Company/TripList/Trip[@Id=$vTripId]/Participants/Customer">
 				<customer>
 					<name>
-						<xsl:value-of select="key('TripCustomerId', @CustomerId)/PrimaryInformation/@Title"></xsl:value-of> <xsl:value-of select="key('TripCustomerId', @CustomerId)/PrimaryInformation/@FirstName"></xsl:value-of> <xsl:value-of select="key('TripCustomerId', @CustomerId)/PrimaryInformation/@LastName"></xsl:value-of> 
+						<xsl:value-of select="key('TripCustomerId', @CustomerId)/PrimaryInformation/@Title"></xsl:value-of> <xsl:text> </xsl:text><xsl:value-of select="key('TripCustomerId', @CustomerId)/PrimaryInformation/@FirstName"></xsl:value-of> <xsl:text> </xsl:text><xsl:value-of select="key('TripCustomerId', @CustomerId)/PrimaryInformation/@LastName"></xsl:value-of> 
 					</name>
 					<mobile>
 						<xsl:value-of select="key('TripCustomerId', @CustomerId)/Contact/@MobilePhone"></xsl:value-of> 
@@ -75,29 +74,30 @@
 			Day elements -->
 			<xsl:for-each select="/Company/TourList/Tour[@Id=$vTourId]/TourItinerary/Day">
 				<activity>
-					<xsl:value-of select="@Category"/> : 
+					<category><xsl:value-of select="@Category"/> </category>
 					<!-- Generate a conditional output based on category
 					The Category START and FINISH  don't involve any travel
 					hence, the output content for the walking days needs to be different
 					for the start days and end days of the tour-->
-					<xsl:choose>
-						<xsl:when test="@Category = 'START' or @Category = 'FINISH'">
-							<xsl:if test="@Category = 'START'">
-								<xsl:variable name="vStartDest" select="@StartDestinationId"/>
+					<description>
+						<xsl:choose>
+							<xsl:when test="@Category = 'START' or @Category = 'FINISH'">
+								<xsl:if test="@Category = 'START'">
+									<xsl:variable name="vStartDest" select="@StartDestinationId"/>
         Travel to <xsl:value-of select="/Company/DestinationList/Destination[@Id=$vStartDest]/@DestinationName"/> where your first night's accommodation has been booked
-							</xsl:if>
-							<xsl:if test="@Category = 'FINISH'">
-								<xsl:variable name="vStartDest" select="@StartDestinationId"/>
+								</xsl:if>
+								<xsl:if test="@Category = 'FINISH'">
+									<xsl:variable name="vStartDest" select="@StartDestinationId"/>
         Depart from <xsl:value-of select="/Company/DestinationList/Destination[@Id=$vStartDest]/@DestinationName"/> after breakfast
-							</xsl:if>	
-
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:variable name="vStartDest" select="@StartDestinationId"/>
-							<xsl:variable name="vEndDest" select="@EndDestinationId"/>
-							<xsl:value-of select="/Company/DestinationList/Destination[@Id=$vStartDest]/@DestinationName"/> to <xsl:value-of select="/Company/DestinationList/Destination[@Id=$vEndDest]/@DestinationName"/>,  <xsl:value-of select="@NoOfMiles"/> miles.
-						</xsl:otherwise>
-					</xsl:choose>
+								</xsl:if>	
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:variable name="vStartDest" select="@StartDestinationId"/>
+								<xsl:variable name="vEndDest" select="@EndDestinationId"/>
+								<xsl:value-of select="/Company/DestinationList/Destination[@Id=$vStartDest]/@DestinationName"/> to <xsl:value-of select="/Company/DestinationList/Destination[@Id=$vEndDest]/@DestinationName"/>,  <xsl:value-of select="@NoOfMiles"/> miles.
+							</xsl:otherwise>
+						</xsl:choose>
+					</description>
 				</activity>
 			</xsl:for-each>
 		</itinerary>
@@ -127,14 +127,10 @@
 							<xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Contact/@MobilePhone"/>
 						</mobile>
 						<address>
-							<xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Address/@AddressLine1"/>,
-							<xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Address/@AddressLine2"/>,
-							<xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Address/@PostCode"/>,
-							<xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Address/@Country"/>
+							<xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Address/@AddressLine1"/>, <xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Address/@AddressLine2"/>, <xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Address/@PostCode"/>, <xsl:value-of select="key('TourStartDestinationId', @StartDestinationId)/Address/@Country"/>
 						</address>
 					</destination>
 				</xsl:if>
-
 			</xsl:for-each>
 		</destinations>
 	</xsl:template>

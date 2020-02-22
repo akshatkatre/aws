@@ -1,0 +1,1091 @@
+   1 {
+   2   "definitions": {},
+   3   "$schema": "http://json-schema.org/draft-07/schema#",
+   4   "$id": "http://tours.com/root.json",
+   5   "type": "object",
+   6   "title": "The Root Schema",
+   7   "required": [
+   8     "CustomerList",
+   9     "GuideList",
+  10     "DestinationList",
+  11     "TourList",
+  12     "TripList"
+  13   ],
+  14   "properties": {
+  15     "CustomerList": {
+  16       "$id": "#/properties/CustomerList",
+  17       "type": "array",
+  18       "title": "The Customerlist Schema",
+  19       "items": {
+  20         "$id": "#/properties/CustomerList/items",
+  21         "type": "object",
+  22         "title": "The Items Schema",
+  23         "required": [
+  24           "Id",
+  25           "PrimaryInformation",
+  26           "Contact",
+  27           "Address"
+  28         ],
+  29         "properties": {
+  30           "Id": {
+  31             "$id": "#/properties/CustomerList/items/properties/Id",
+  32             "type": "string",
+  33             "title": "The Id Schema",
+  34             "default": "",
+  35             "examples": [
+  36               "100"
+  37             ],
+  38             "pattern": "^(.*)$"
+  39           },
+  40           "PrimaryInformation": {
+  41             "$id": "#/properties/CustomerList/items/properties/PrimaryInformation",
+  42             "type": "object",
+  43             "title": "The Primaryinformation Schema",
+  44             "required": [
+  45               "Title",
+  46               "FirstName",
+  47               "LastName",
+  48               "DateOfBirth"
+  49             ],
+  50             "properties": {
+  51               "Title": {
+  52                 "$id": "#/properties/CustomerList/items/properties/PrimaryInformation/properties/Title",
+  53                 "type": "string",
+  54                 "title": "The Title Schema",
+  55                 "default": "",
+  56                 "examples": [
+  57                   "Mr"
+  58                 ],
+  59                 "pattern": "^(.*)$"
+  60               },
+  61               "FirstName": {
+  62                 "$id": "#/properties/CustomerList/items/properties/PrimaryInformation/properties/FirstName",
+  63                 "type": "string",
+  64                 "title": "The Firstname Schema",
+  65                 "default": "",
+  66                 "examples": [
+  67                   "Johnathan"
+  68                 ],
+  69                 "pattern": "^(.*)$"
+  70               },
+  71               "LastName": {
+  72                 "$id": "#/properties/CustomerList/items/properties/PrimaryInformation/properties/LastName",
+  73                 "type": "string",
+  74                 "title": "The Lastname Schema",
+  75                 "default": "",
+  76                 "examples": [
+  77                   "Smith"
+  78                 ],
+  79                 "pattern": "^(.*)$"
+  80               },
+  81               "DateOfBirth": {
+  82                 "$id": "#/properties/CustomerList/items/properties/PrimaryInformation/properties/DateOfBirth",
+  83                 "type": "string",
+  84                 "title": "The Dateofbirth Schema",
+  85                 "default": "",
+  86                 "examples": [
+  87                   "1968-12-01"
+  88                 ],
+  89                 "pattern": "^(.*)$"
+  90               }
+  91             }
+  92           },
+  93           "Contact": {
+  94             "$id": "#/properties/CustomerList/items/properties/Contact",
+  95             "type": "object",
+  96             "title": "The Contact Schema",
+  97             "required": [
+  98               "EmailId",
+  99               "MobilePhone",
+ 100               "Landline"
+ 101             ],
+ 102             "properties": {
+ 103               "EmailId": {
+ 104                 "$id": "#/properties/CustomerList/items/properties/Contact/properties/EmailId",
+ 105                 "type": "string",
+ 106                 "title": "The Emailid Schema",
+ 107                 "default": "",
+ 108                 "examples": [
+ 109                   "Johnathan.Smith@somedomain.com"
+ 110                 ],
+ 111                 "pattern": "^(.*)$"
+ 112               },
+ 113               "MobilePhone": {
+ 114                 "$id": "#/properties/CustomerList/items/properties/Contact/properties/MobilePhone",
+ 115                 "type": "string",
+ 116                 "title": "The Mobilephone Schema",
+ 117                 "default": "",
+ 118                 "examples": [
+ 119                   "839393"
+ 120                 ],
+ 121                 "pattern": "^(.*)$"
+ 122               },
+ 123               "Landline": {
+ 124                 "$id": "#/properties/CustomerList/items/properties/Contact/properties/Landline",
+ 125                 "type": "string",
+ 126                 "title": "The Landline Schema",
+ 127                 "default": "",
+ 128                 "examples": [
+ 129                   "9939393"
+ 130                 ],
+ 131                 "pattern": "^(.*)$"
+ 132               }
+ 133             }
+ 134           },
+ 135           "Address": {
+ 136             "$id": "#/properties/CustomerList/items/properties/Address",
+ 137             "type": "object",
+ 138             "title": "The Address Schema",
+ 139             "required": [
+ 140               "AddressLine1",
+ 141               "AddressLine2",
+ 142               "AddressLine3",
+ 143               "AddressLine4",
+ 144               "Region",
+ 145               "PostCode",
+ 146               "Country"
+ 147             ],
+ 148             "properties": {
+ 149               "AddressLine1": {
+ 150                 "$id": "#/properties/CustomerList/items/properties/Address/properties/AddressLine1",
+ 151                 "type": "string",
+ 152                 "title": "The Addressline1 Schema",
+ 153                 "default": "",
+ 154                 "examples": [
+ 155                   "Line 1"
+ 156                 ],
+ 157                 "pattern": "^(.*)$"
+ 158               },
+ 159               "AddressLine2": {
+ 160                 "$id": "#/properties/CustomerList/items/properties/Address/properties/AddressLine2",
+ 161                 "type": "string",
+ 162                 "title": "The Addressline2 Schema",
+ 163                 "default": "",
+ 164                 "examples": [
+ 165                   ""
+ 166                 ],
+ 167                 "pattern": "^(.*)$"
+ 168               },
+ 169               "AddressLine3": {
+ 170                 "$id": "#/properties/CustomerList/items/properties/Address/properties/AddressLine3",
+ 171                 "type": "string",
+ 172                 "title": "The Addressline3 Schema",
+ 173                 "default": "",
+ 174                 "examples": [
+ 175                   ""
+ 176                 ],
+ 177                 "pattern": "^(.*)$"
+ 178               },
+ 179               "AddressLine4": {
+ 180                 "$id": "#/properties/CustomerList/items/properties/Address/properties/AddressLine4",
+ 181                 "type": "string",
+ 182                 "title": "The Addressline4 Schema",
+ 183                 "default": "",
+ 184                 "examples": [
+ 185                   ""
+ 186                 ],
+ 187                 "pattern": "^(.*)$"
+ 188               },
+ 189               "Region": {
+ 190                 "$id": "#/properties/CustomerList/items/properties/Address/properties/Region",
+ 191                 "type": "string",
+ 192                 "title": "The Region Schema",
+ 193                 "default": "",
+ 194                 "examples": [
+ 195                   ""
+ 196                 ],
+ 197                 "pattern": "^(.*)$"
+ 198               },
+ 199               "PostCode": {
+ 200                 "$id": "#/properties/CustomerList/items/properties/Address/properties/PostCode",
+ 201                 "type": "string",
+ 202                 "title": "The Postcode Schema",
+ 203                 "default": "",
+ 204                 "examples": [
+ 205                   "SL1"
+ 206                 ],
+ 207                 "pattern": "^(.*)$"
+ 208               },
+ 209               "Country": {
+ 210                 "$id": "#/properties/CustomerList/items/properties/Address/properties/Country",
+ 211                 "type": "string",
+ 212                 "title": "The Country Schema",
+ 213                 "default": "",
+ 214                 "examples": [
+ 215                   "GB"
+ 216                 ],
+ 217                 "pattern": "^(.*)$"
+ 218               }
+ 219             }
+ 220           }
+ 221         }
+ 222       }
+ 223     },
+ 224     "GuideList": {
+ 225       "$id": "#/properties/GuideList",
+ 226       "type": "array",
+ 227       "title": "The Guidelist Schema",
+ 228       "items": {
+ 229         "$id": "#/properties/GuideList/items",
+ 230         "type": "object",
+ 231         "title": "The Items Schema",
+ 232         "required": [
+ 233           "Id",
+ 234           "Skills",
+ 235           "PrimaryInformation",
+ 236           "Contact",
+ 237           "Address"
+ 238         ],
+ 239         "properties": {
+ 240           "Id": {
+ 241             "$id": "#/properties/GuideList/items/properties/Id",
+ 242             "type": "string",
+ 243             "title": "The Id Schema",
+ 244             "default": "",
+ 245             "examples": [
+ 246               "1200"
+ 247             ],
+ 248             "pattern": "^(.*)$"
+ 249           },
+ 250           "Skills": {
+ 251             "$id": "#/properties/GuideList/items/properties/Skills",
+ 252             "type": "array",
+ 253             "title": "The Skills Schema",
+ 254             "items": {
+ 255               "$id": "#/properties/GuideList/items/properties/Skills/items",
+ 256               "type": "object",
+ 257               "title": "The Items Schema",
+ 258               "required": [
+ 259                 "Details"
+ 260               ],
+ 261               "properties": {
+ 262                 "Details": {
+ 263                   "$id": "#/properties/GuideList/items/properties/Skills/items/properties/Details",
+ 264                   "type": "string",
+ 265                   "title": "The Details Schema",
+ 266                   "default": "",
+ 267                   "examples": [
+ 268                     "First Aid"
+ 269                   ],
+ 270                   "pattern": "^(.*)$"
+ 271                 }
+ 272               }
+ 273             }
+ 274           },
+ 275           "PrimaryInformation": {
+ 276             "$id": "#/properties/GuideList/items/properties/PrimaryInformation",
+ 277             "type": "object",
+ 278             "title": "The Primaryinformation Schema",
+ 279             "required": [
+ 280               "Title",
+ 281               "FirstName",
+ 282               "LastName",
+ 283               "DateOfBirth"
+ 284             ],
+ 285             "properties": {
+ 286               "Title": {
+ 287                 "$id": "#/properties/GuideList/items/properties/PrimaryInformation/properties/Title",
+ 288                 "type": "string",
+ 289                 "title": "The Title Schema",
+ 290                 "default": "",
+ 291                 "examples": [
+ 292                   "Miss"
+ 293                 ],
+ 294                 "pattern": "^(.*)$"
+ 295               },
+ 296               "FirstName": {
+ 297                 "$id": "#/properties/GuideList/items/properties/PrimaryInformation/properties/FirstName",
+ 298                 "type": "string",
+ 299                 "title": "The Firstname Schema",
+ 300                 "default": "",
+ 301                 "examples": [
+ 302                   "Kelly"
+ 303                 ],
+ 304                 "pattern": "^(.*)$"
+ 305               },
+ 306               "LastName": {
+ 307                 "$id": "#/properties/GuideList/items/properties/PrimaryInformation/properties/LastName",
+ 308                 "type": "string",
+ 309                 "title": "The Lastname Schema",
+ 310                 "default": "",
+ 311                 "examples": [
+ 312                   "Armstorng"
+ 313                 ],
+ 314                 "pattern": "^(.*)$"
+ 315               },
+ 316               "DateOfBirth": {
+ 317                 "$id": "#/properties/GuideList/items/properties/PrimaryInformation/properties/DateOfBirth",
+ 318                 "type": "string",
+ 319                 "title": "The Dateofbirth Schema",
+ 320                 "default": "",
+ 321                 "examples": [
+ 322                   "1990-12-01"
+ 323                 ],
+ 324                 "pattern": "^(.*)$"
+ 325               }
+ 326             }
+ 327           },
+ 328           "Contact": {
+ 329             "$id": "#/properties/GuideList/items/properties/Contact",
+ 330             "type": "object",
+ 331             "title": "The Contact Schema",
+ 332             "required": [
+ 333               "EmailId",
+ 334               "MobilePhone",
+ 335               "Landline"
+ 336             ],
+ 337             "properties": {
+ 338               "EmailId": {
+ 339                 "$id": "#/properties/GuideList/items/properties/Contact/properties/EmailId",
+ 340                 "type": "string",
+ 341                 "title": "The Emailid Schema",
+ 342                 "default": "",
+ 343                 "examples": [
+ 344                   "Kelly.Armstorng@somedomain.com"
+ 345                 ],
+ 346                 "pattern": "^(.*)$"
+ 347               },
+ 348               "MobilePhone": {
+ 349                 "$id": "#/properties/GuideList/items/properties/Contact/properties/MobilePhone",
+ 350                 "type": "string",
+ 351                 "title": "The Mobilephone Schema",
+ 352                 "default": "",
+ 353                 "examples": [
+ 354                   "80093"
+ 355                 ],
+ 356                 "pattern": "^(.*)$"
+ 357               },
+ 358               "Landline": {
+ 359                 "$id": "#/properties/GuideList/items/properties/Contact/properties/Landline",
+ 360                 "type": "string",
+ 361                 "title": "The Landline Schema",
+ 362                 "default": "",
+ 363                 "examples": [
+ 364                   "9933"
+ 365                 ],
+ 366                 "pattern": "^(.*)$"
+ 367               }
+ 368             }
+ 369           },
+ 370           "Address": {
+ 371             "$id": "#/properties/GuideList/items/properties/Address",
+ 372             "type": "object",
+ 373             "title": "The Address Schema",
+ 374             "required": [
+ 375               "AddressLine1",
+ 376               "AddressLine2",
+ 377               "AddressLine3",
+ 378               "AddressLine4",
+ 379               "Region",
+ 380               "PostCode",
+ 381               "Country"
+ 382             ],
+ 383             "properties": {
+ 384               "AddressLine1": {
+ 385                 "$id": "#/properties/GuideList/items/properties/Address/properties/AddressLine1",
+ 386                 "type": "string",
+ 387                 "title": "The Addressline1 Schema",
+ 388                 "default": "",
+ 389                 "examples": [
+ 390                   "Line 1"
+ 391                 ],
+ 392                 "pattern": "^(.*)$"
+ 393               },
+ 394               "AddressLine2": {
+ 395                 "$id": "#/properties/GuideList/items/properties/Address/properties/AddressLine2",
+ 396                 "type": "string",
+ 397                 "title": "The Addressline2 Schema",
+ 398                 "default": "",
+ 399                 "examples": [
+ 400                   ""
+ 401                 ],
+ 402                 "pattern": "^(.*)$"
+ 403               },
+ 404               "AddressLine3": {
+ 405                 "$id": "#/properties/GuideList/items/properties/Address/properties/AddressLine3",
+ 406                 "type": "string",
+ 407                 "title": "The Addressline3 Schema",
+ 408                 "default": "",
+ 409                 "examples": [
+ 410                   ""
+ 411                 ],
+ 412                 "pattern": "^(.*)$"
+ 413               },
+ 414               "AddressLine4": {
+ 415                 "$id": "#/properties/GuideList/items/properties/Address/properties/AddressLine4",
+ 416                 "type": "string",
+ 417                 "title": "The Addressline4 Schema",
+ 418                 "default": "",
+ 419                 "examples": [
+ 420                   ""
+ 421                 ],
+ 422                 "pattern": "^(.*)$"
+ 423               },
+ 424               "Region": {
+ 425                 "$id": "#/properties/GuideList/items/properties/Address/properties/Region",
+ 426                 "type": "string",
+ 427                 "title": "The Region Schema",
+ 428                 "default": "",
+ 429                 "examples": [
+ 430                   ""
+ 431                 ],
+ 432                 "pattern": "^(.*)$"
+ 433               },
+ 434               "PostCode": {
+ 435                 "$id": "#/properties/GuideList/items/properties/Address/properties/PostCode",
+ 436                 "type": "string",
+ 437                 "title": "The Postcode Schema",
+ 438                 "default": "",
+ 439                 "examples": [
+ 440                   "W01"
+ 441                 ],
+ 442                 "pattern": "^(.*)$"
+ 443               },
+ 444               "Country": {
+ 445                 "$id": "#/properties/GuideList/items/properties/Address/properties/Country",
+ 446                 "type": "string",
+ 447                 "title": "The Country Schema",
+ 448                 "default": "",
+ 449                 "examples": [
+ 450                   "GB"
+ 451                 ],
+ 452                 "pattern": "^(.*)$"
+ 453               }
+ 454             }
+ 455           }
+ 456         }
+ 457       }
+ 458     },
+ 459     "DestinationList": {
+ 460       "$id": "#/properties/DestinationList",
+ 461       "type": "array",
+ 462       "title": "The Destinationlist Schema",
+ 463       "items": {
+ 464         "$id": "#/properties/DestinationList/items",
+ 465         "type": "object",
+ 466         "title": "The Items Schema",
+ 467         "required": [
+ 468           "Id",
+ 469           "DestinationName",
+ 470           "DestinationType",
+ 471           "Access",
+ 472           "Contact",
+ 473           "Address"
+ 474         ],
+ 475         "properties": {
+ 476           "Id": {
+ 477             "$id": "#/properties/DestinationList/items/properties/Id",
+ 478             "type": "string",
+ 479             "title": "The Id Schema",
+ 480             "default": "",
+ 481             "examples": [
+ 482               "1"
+ 483             ],
+ 484             "pattern": "^(.*)$"
+ 485           },
+ 486           "DestinationName": {
+ 487             "$id": "#/properties/DestinationList/items/properties/DestinationName",
+ 488             "type": "string",
+ 489             "title": "The Destinationname Schema",
+ 490             "default": "",
+ 491             "examples": [
+ 492               "Ayr"
+ 493             ],
+ 494             "pattern": "^(.*)$"
+ 495           },
+ 496           "DestinationType": {
+ 497             "$id": "#/properties/DestinationList/items/properties/DestinationType",
+ 498             "type": "string",
+ 499             "title": "The Destinationtype Schema",
+ 500             "default": "",
+ 501             "examples": [
+ 502               "BnB"
+ 503             ],
+ 504             "pattern": "^(.*)$"
+ 505           },
+ 506           "Access": {
+ 507             "$id": "#/properties/DestinationList/items/properties/Access",
+ 508             "type": "string",
+ 509             "title": "The Access Schema",
+ 510             "default": "",
+ 511             "examples": [
+ 512               ""
+ 513             ],
+ 514             "pattern": "^(.*)$"
+ 515           },
+ 516           "Contact": {
+ 517             "$id": "#/properties/DestinationList/items/properties/Contact",
+ 518             "type": "object",
+ 519             "title": "The Contact Schema",
+ 520             "required": [
+ 521               "EmailId",
+ 522               "MobilePhone",
+ 523               "Landline"
+ 524             ],
+ 525             "properties": {
+ 526               "EmailId": {
+ 527                 "$id": "#/properties/DestinationList/items/properties/Contact/properties/EmailId",
+ 528                 "type": "string",
+ 529                 "title": "The Emailid Schema",
+ 530                 "default": "",
+ 531                 "examples": [
+ 532                   "ft.william@ema.com"
+ 533                 ],
+ 534                 "pattern": "^(.*)$"
+ 535               },
+ 536               "MobilePhone": {
+ 537                 "$id": "#/properties/DestinationList/items/properties/Contact/properties/MobilePhone",
+ 538                 "type": "string",
+ 539                 "title": "The Mobilephone Schema",
+ 540                 "default": "",
+ 541                 "examples": [
+ 542                   "10039993"
+ 543                 ],
+ 544                 "pattern": "^(.*)$"
+ 545               },
+ 546               "Landline": {
+ 547                 "$id": "#/properties/DestinationList/items/properties/Contact/properties/Landline",
+ 548                 "type": "string",
+ 549                 "title": "The Landline Schema",
+ 550                 "default": "",
+ 551                 "examples": [
+ 552                   "33434"
+ 553                 ],
+ 554                 "pattern": "^(.*)$"
+ 555               }
+ 556             }
+ 557           },
+ 558           "Address": {
+ 559             "$id": "#/properties/DestinationList/items/properties/Address",
+ 560             "type": "object",
+ 561             "title": "The Address Schema",
+ 562             "required": [
+ 563               "AddressLine1",
+ 564               "AddressLine2",
+ 565               "AddressLine3",
+ 566               "AddressLine4",
+ 567               "Region",
+ 568               "PostCode",
+ 569               "Country"
+ 570             ],
+ 571             "properties": {
+ 572               "AddressLine1": {
+ 573                 "$id": "#/properties/DestinationList/items/properties/Address/properties/AddressLine1",
+ 574                 "type": "string",
+ 575                 "title": "The Addressline1 Schema",
+ 576                 "default": "",
+ 577                 "examples": [
+ 578                   "1 High Street"
+ 579                 ],
+ 580                 "pattern": "^(.*)$"
+ 581               },
+ 582               "AddressLine2": {
+ 583                 "$id": "#/properties/DestinationList/items/properties/Address/properties/AddressLine2",
+ 584                 "type": "string",
+ 585                 "title": "The Addressline2 Schema",
+ 586                 "default": "",
+ 587                 "examples": [
+ 588                   "Ayr"
+ 589                 ],
+ 590                 "pattern": "^(.*)$"
+ 591               },
+ 592               "AddressLine3": {
+ 593                 "$id": "#/properties/DestinationList/items/properties/Address/properties/AddressLine3",
+ 594                 "type": "string",
+ 595                 "title": "The Addressline3 Schema",
+ 596                 "default": "",
+ 597                 "examples": [
+ 598                   ""
+ 599                 ],
+ 600                 "pattern": "^(.*)$"
+ 601               },
+ 602               "AddressLine4": {
+ 603                 "$id": "#/properties/DestinationList/items/properties/Address/properties/AddressLine4",
+ 604                 "type": "string",
+ 605                 "title": "The Addressline4 Schema",
+ 606                 "default": "",
+ 607                 "examples": [
+ 608                   ""
+ 609                 ],
+ 610                 "pattern": "^(.*)$"
+ 611               },
+ 612               "Region": {
+ 613                 "$id": "#/properties/DestinationList/items/properties/Address/properties/Region",
+ 614                 "type": "string",
+ 615                 "title": "The Region Schema",
+ 616                 "default": "",
+ 617                 "examples": [
+ 618                   ""
+ 619                 ],
+ 620                 "pattern": "^(.*)$"
+ 621               },
+ 622               "PostCode": {
+ 623                 "$id": "#/properties/DestinationList/items/properties/Address/properties/PostCode",
+ 624                 "type": "string",
+ 625                 "title": "The Postcode Schema",
+ 626                 "default": "",
+ 627                 "examples": [
+ 628                   "AY01"
+ 629                 ],
+ 630                 "pattern": "^(.*)$"
+ 631               },
+ 632               "Country": {
+ 633                 "$id": "#/properties/DestinationList/items/properties/Address/properties/Country",
+ 634                 "type": "string",
+ 635                 "title": "The Country Schema",
+ 636                 "default": "",
+ 637                 "examples": [
+ 638                   "GB"
+ 639                 ],
+ 640                 "pattern": "^(.*)$"
+ 641               }
+ 642             }
+ 643           }
+ 644         }
+ 645       }
+ 646     },
+ 647     "TourList": {
+ 648       "$id": "#/properties/TourList",
+ 649       "type": "array",
+ 650       "title": "The Tourlist Schema",
+ 651       "items": {
+ 652         "$id": "#/properties/TourList/items",
+ 653         "type": "object",
+ 654         "title": "The Items Schema",
+ 655         "required": [
+ 656           "Id",
+ 657           "Name",
+ 658           "TourFacts",
+ 659           "TourDescription",
+ 660           "TourItinerary",
+ 661           "AdditionalInformationList",
+ 662           "CertifiedGuides"
+ 663         ],
+ 664         "properties": {
+ 665           "Id": {
+ 666             "$id": "#/properties/TourList/items/properties/Id",
+ 667             "type": "string",
+ 668             "title": "The Id Schema",
+ 669             "default": "",
+ 670             "examples": [
+ 671               "1"
+ 672             ],
+ 673             "pattern": "^(.*)$"
+ 674           },
+ 675           "Name": {
+ 676             "$id": "#/properties/TourList/items/properties/Name",
+ 677             "type": "string",
+ 678             "title": "The Name Schema",
+ 679             "default": "",
+ 680             "examples": [
+ 681               "Ayrshire Coastal Path - North Section"
+ 682             ],
+ 683             "pattern": "^(.*)$"
+ 684           },
+ 685           "TourFacts": {
+ 686             "$id": "#/properties/TourList/items/properties/TourFacts",
+ 687             "type": "object",
+ 688             "title": "The Tourfacts Schema",
+ 689             "required": [
+ 690               "NoOfDays",
+ 691               "NoOfNights",
+ 692               "Difficulty",
+ 693               "IsDogFriendly",
+ 694               "IsAllYear",
+ 695               "Minimum",
+ 696               "Maximum",
+ 697               "CostPerPerson"
+ 698             ],
+ 699             "properties": {
+ 700               "NoOfDays": {
+ 701                 "$id": "#/properties/TourList/items/properties/TourFacts/properties/NoOfDays",
+ 702                 "type": "string",
+ 703                 "title": "The Noofdays Schema",
+ 704                 "default": "",
+ 705                 "examples": [
+ 706                   "4"
+ 707                 ],
+ 708                 "pattern": "^(.*)$"
+ 709               },
+ 710               "NoOfNights": {
+ 711                 "$id": "#/properties/TourList/items/properties/TourFacts/properties/NoOfNights",
+ 712                 "type": "string",
+ 713                 "title": "The Noofnights Schema",
+ 714                 "default": "",
+ 715                 "examples": [
+ 716                   "3"
+ 717                 ],
+ 718                 "pattern": "^(.*)$"
+ 719               },
+ 720               "Difficulty": {
+ 721                 "$id": "#/properties/TourList/items/properties/TourFacts/properties/Difficulty",
+ 722                 "type": "string",
+ 723                 "title": "The Difficulty Schema",
+ 724                 "default": "",
+ 725                 "examples": [
+ 726                   "Moderate / Demanding"
+ 727                 ],
+ 728                 "pattern": "^(.*)$"
+ 729               },
+ 730               "IsDogFriendly": {
+ 731                 "$id": "#/properties/TourList/items/properties/TourFacts/properties/IsDogFriendly",
+ 732                 "type": "string",
+ 733                 "title": "The Isdogfriendly Schema",
+ 734                 "default": "",
+ 735                 "examples": [
+ 736                   "false"
+ 737                 ],
+ 738                 "pattern": "^(.*)$"
+ 739               },
+ 740               "IsAllYear": {
+ 741                 "$id": "#/properties/TourList/items/properties/TourFacts/properties/IsAllYear",
+ 742                 "type": "string",
+ 743                 "title": "The Isallyear Schema",
+ 744                 "default": "",
+ 745                 "examples": [
+ 746                   "false"
+ 747                 ],
+ 748                 "pattern": "^(.*)$"
+ 749               },
+ 750               "Minimum": {
+ 751                 "$id": "#/properties/TourList/items/properties/TourFacts/properties/Minimum",
+ 752                 "type": "string",
+ 753                 "title": "The Minimum Schema",
+ 754                 "default": "",
+ 755                 "examples": [
+ 756                   "3"
+ 757                 ],
+ 758                 "pattern": "^(.*)$"
+ 759               },
+ 760               "Maximum": {
+ 761                 "$id": "#/properties/TourList/items/properties/TourFacts/properties/Maximum",
+ 762                 "type": "string",
+ 763                 "title": "The Maximum Schema",
+ 764                 "default": "",
+ 765                 "examples": [
+ 766                   "10"
+ 767                 ],
+ 768                 "pattern": "^(.*)$"
+ 769               },
+ 770               "CostPerPerson": {
+ 771                 "$id": "#/properties/TourList/items/properties/TourFacts/properties/CostPerPerson",
+ 772                 "type": "string",
+ 773                 "title": "The Costperperson Schema",
+ 774                 "default": "",
+ 775                 "examples": [
+ 776                   "295.00"
+ 777                 ],
+ 778                 "pattern": "^(.*)$"
+ 779               }
+ 780             }
+ 781           },
+ 782           "TourDescription": {
+ 783             "$id": "#/properties/TourList/items/properties/TourDescription",
+ 784             "type": "object",
+ 785             "title": "The Tourdescription Schema",
+ 786             "required": [
+ 787               "ShortDescription",
+ 788               "ExtendedDiscription"
+ 789             ],
+ 790             "properties": {
+ 791               "ShortDescription": {
+ 792                 "$id": "#/properties/TourList/items/properties/TourDescription/properties/ShortDescription",
+ 793                 "type": "string",
+ 794                 "title": "The Shortdescription Schema",
+ 795                 "default": "",
+ 796                 "examples": [
+ 797                   "This itinerary lists our preferred overnight stops for this tour. Sometimes there may be a shortage of available accommodation in a preferred location, in which case we will transfer you from the trail to your accommodation and back again at no extra charge. Overnight stops marked with a (T) will always require transfers as standard."
+ 798                 ],
+ 799                 "pattern": "^(.*)$"
+ 800               },
+ 801               "ExtendedDiscription": {
+ 802                 "$id": "#/properties/TourList/items/properties/TourDescription/properties/ExtendedDiscription",
+ 803                 "type": "string",
+ 804                 "title": "The Extendeddiscription Schema",
+ 805                 "default": "",
+ 806                 "examples": [
+ 807                   "This itinerary lists our preferred overnight stops for this tour. Sometimes there may be a shortage of available accommodation in a preferred location, in which case we will transfer you from the trail to your accommodation and back again at no extra charge. Overnight stops marked with a (T) will always require transfers as standard.      Overnight stops marked with an (L) have very limited accommodation, and therefore more often than not will also require a transfer, particularly on bank holidays and weekends. We will use non-transfer accommodation wherever possible."
+ 808                 ],
+ 809                 "pattern": "^(.*)$"
+ 810               }
+ 811             }
+ 812           },
+ 813           "TourItinerary": {
+ 814             "$id": "#/properties/TourList/items/properties/TourItinerary",
+ 815             "type": "array",
+ 816             "title": "The Touritinerary Schema",
+ 817             "items": {
+ 818               "$id": "#/properties/TourList/items/properties/TourItinerary/items",
+ 819               "type": "object",
+ 820               "title": "The Items Schema",
+ 821               "required": [
+ 822                 "Category",
+ 823                 "SequenceNo",
+ 824                 "StartDestinationId",
+ 825                 "EndDestinationId",
+ 826                 "NoOfMiles",
+ 827                 "Activities"
+ 828               ],
+ 829               "properties": {
+ 830                 "Category": {
+ 831                   "$id": "#/properties/TourList/items/properties/TourItinerary/items/properties/Category",
+ 832                   "type": "string",
+ 833                   "title": "The Category Schema",
+ 834                   "default": "",
+ 835                   "examples": [
+ 836                     "START"
+ 837                   ],
+ 838                   "pattern": "^(.*)$"
+ 839                 },
+ 840                 "SequenceNo": {
+ 841                   "$id": "#/properties/TourList/items/properties/TourItinerary/items/properties/SequenceNo",
+ 842                   "type": "string",
+ 843                   "title": "The Sequenceno Schema",
+ 844                   "default": "",
+ 845                   "examples": [
+ 846                     "1"
+ 847                   ],
+ 848                   "pattern": "^(.*)$"
+ 849                 },
+ 850                 "StartDestinationId": {
+ 851                   "$id": "#/properties/TourList/items/properties/TourItinerary/items/properties/StartDestinationId",
+ 852                   "type": "string",
+ 853                   "title": "The Startdestinationid Schema",
+ 854                   "default": "",
+ 855                   "examples": [
+ 856                     "1"
+ 857                   ],
+ 858                   "pattern": "^(.*)$"
+ 859                 },
+ 860                 "EndDestinationId": {
+ 861                   "$id": "#/properties/TourList/items/properties/TourItinerary/items/properties/EndDestinationId",
+ 862                   "type": "string",
+ 863                   "title": "The Enddestinationid Schema",
+ 864                   "default": "",
+ 865                   "examples": [
+ 866                     "1"
+ 867                   ],
+ 868                   "pattern": "^(.*)$"
+ 869                 },
+ 870                 "NoOfMiles": {
+ 871                   "$id": "#/properties/TourList/items/properties/TourItinerary/items/properties/NoOfMiles",
+ 872                   "type": "string",
+ 873                   "title": "The Noofmiles Schema",
+ 874                   "default": "",
+ 875                   "examples": [
+ 876                     "0"
+ 877                   ],
+ 878                   "pattern": "^(.*)$"
+ 879                 },
+ 880                 "Activities": {
+ 881                   "$id": "#/properties/TourList/items/properties/TourItinerary/items/properties/Activities",
+ 882                   "type": "string",
+ 883                   "title": "The Activities Schema",
+ 884                   "default": "",
+ 885                   "examples": [
+ 886                     ""
+ 887                   ],
+ 888                   "pattern": "^(.*)$"
+ 889                 }
+ 890               }
+ 891             }
+ 892           },
+ 893           "AdditionalInformationList": {
+ 894             "$id": "#/properties/TourList/items/properties/AdditionalInformationList",
+ 895             "type": "array",
+ 896             "title": "The Additionalinformationlist Schema",
+ 897             "items": {
+ 898               "$id": "#/properties/TourList/items/properties/AdditionalInformationList/items",
+ 899               "type": "object",
+ 900               "title": "The Items Schema",
+ 901               "required": [
+ 902                 "Category",
+ 903                 "Details"
+ 904               ],
+ 905               "properties": {
+ 906                 "Category": {
+ 907                   "$id": "#/properties/TourList/items/properties/AdditionalInformationList/items/properties/Category",
+ 908                   "type": "string",
+ 909                   "title": "The Category Schema",
+ 910                   "default": "",
+ 911                   "examples": [
+ 912                     "INCLUSIONS"
+ 913                   ],
+ 914                   "pattern": "^(.*)$"
+ 915                 },
+ 916                 "Details": {
+ 917                   "$id": "#/properties/TourList/items/properties/AdditionalInformationList/items/properties/Details",
+ 918                   "type": "string",
+ 919                   "title": "The Details Schema",
+ 920                   "default": "",
+ 921                   "examples": [
+ 922                     "inc sds dfdf"
+ 923                   ],
+ 924                   "pattern": "^(.*)$"
+ 925                 }
+ 926               }
+ 927             }
+ 928           },
+ 929           "CertifiedGuides": {
+ 930             "$id": "#/properties/TourList/items/properties/CertifiedGuides",
+ 931             "type": "array",
+ 932             "title": "The Certifiedguides Schema",
+ 933             "items": {
+ 934               "$id": "#/properties/TourList/items/properties/CertifiedGuides/items",
+ 935               "type": "object",
+ 936               "title": "The Items Schema",
+ 937               "required": [
+ 938                 "GuideId"
+ 939               ],
+ 940               "properties": {
+ 941                 "GuideId": {
+ 942                   "$id": "#/properties/TourList/items/properties/CertifiedGuides/items/properties/GuideId",
+ 943                   "type": "string",
+ 944                   "title": "The Guideid Schema",
+ 945                   "default": "",
+ 946                   "examples": [
+ 947                     "1201"
+ 948                   ],
+ 949                   "pattern": "^(.*)$"
+ 950                 }
+ 951               }
+ 952             }
+ 953           }
+ 954         }
+ 955       }
+ 956     },
+ 957     "TripList": {
+ 958       "$id": "#/properties/TripList",
+ 959       "type": "array",
+ 960       "title": "The Triplist Schema",
+ 961       "items": {
+ 962         "$id": "#/properties/TripList/items",
+ 963         "type": "object",
+ 964         "title": "The Items Schema",
+ 965         "required": [
+ 966           "Trip"
+ 967         ],
+ 968         "properties": {
+ 969           "Trip": {
+ 970             "$id": "#/properties/TripList/items/properties/Trip",
+ 971             "type": "object",
+ 972             "title": "The Trip Schema",
+ 973             "required": [
+ 974               "Id",
+ 975               "TourId",
+ 976               "StartDate",
+ 977               "EndDate",
+ 978               "TripGuides",
+ 979               "Participants"
+ 980             ],
+ 981             "properties": {
+ 982               "Id": {
+ 983                 "$id": "#/properties/TripList/items/properties/Trip/properties/Id",
+ 984                 "type": "string",
+ 985                 "title": "The Id Schema",
+ 986                 "default": "",
+ 987                 "examples": [
+ 988                   "900"
+ 989                 ],
+ 990                 "pattern": "^(.*)$"
+ 991               },
+ 992               "TourId": {
+ 993                 "$id": "#/properties/TripList/items/properties/Trip/properties/TourId",
+ 994                 "type": "string",
+ 995                 "title": "The Tourid Schema",
+ 996                 "default": "",
+ 997                 "examples": [
+ 998                   "1"
+ 999                 ],
+1000                 "pattern": "^(.*)$"
+1001               },
+1002               "StartDate": {
+1003                 "$id": "#/properties/TripList/items/properties/Trip/properties/StartDate",
+1004                 "type": "string",
+1005                 "title": "The Startdate Schema",
+1006                 "default": "",
+1007                 "examples": [
+1008                   "2019-08-05"
+1009                 ],
+1010                 "pattern": "^(.*)$"
+1011               },
+1012               "EndDate": {
+1013                 "$id": "#/properties/TripList/items/properties/Trip/properties/EndDate",
+1014                 "type": "string",
+1015                 "title": "The Enddate Schema",
+1016                 "default": "",
+1017                 "examples": [
+1018                   "2019-08-10"
+1019                 ],
+1020                 "pattern": "^(.*)$"
+1021               },
+1022               "TripGuides": {
+1023                 "$id": "#/properties/TripList/items/properties/Trip/properties/TripGuides",
+1024                 "type": "array",
+1025                 "title": "The Tripguides Schema",
+1026                 "items": {
+1027                   "$id": "#/properties/TripList/items/properties/Trip/properties/TripGuides/items",
+1028                   "type": "object",
+1029                   "title": "The Items Schema",
+1030                   "required": [
+1031                     "GuideId"
+1032                   ],
+1033                   "properties": {
+1034                     "GuideId": {
+1035                       "$id": "#/properties/TripList/items/properties/Trip/properties/TripGuides/items/properties/GuideId",
+1036                       "type": "string",
+1037                       "title": "The Guideid Schema",
+1038                       "default": "",
+1039                       "examples": [
+1040                         "1201"
+1041                       ],
+1042                       "pattern": "^(.*)$"
+1043                     }
+1044                   }
+1045                 }
+1046               },
+1047               "Participants": {
+1048                 "$id": "#/properties/TripList/items/properties/Trip/properties/Participants",
+1049                 "type": "array",
+1050                 "title": "The Participants Schema",
+1051                 "items": {
+1052                   "$id": "#/properties/TripList/items/properties/Trip/properties/Participants/items",
+1053                   "type": "object",
+1054                   "title": "The Items Schema",
+1055                   "required": [
+1056                     "CustomerId",
+1057                     "SatisfactionScore"
+1058                   ],
+1059                   "properties": {
+1060                     "CustomerId": {
+1061                       "$id": "#/properties/TripList/items/properties/Trip/properties/Participants/items/properties/CustomerId",
+1062                       "type": "string",
+1063                       "title": "The Customerid Schema",
+1064                       "default": "",
+1065                       "examples": [
+1066                         "101"
+1067                       ],
+1068                       "pattern": "^(.*)$"
+1069                     },
+1070                     "SatisfactionScore": {
+1071                       "$id": "#/properties/TripList/items/properties/Trip/properties/Participants/items/properties/SatisfactionScore",
+1072                       "type": "string",
+1073                       "title": "The Satisfactionscore Schema",
+1074                       "default": "",
+1075                       "examples": [
+1076                         "8"
+1077                       ],
+1078                       "pattern": "^(.*)$"
+1079                     }
+1080                   }
+1081                 }
+1082               }
+1083             }
+1084           }
+1085         }
+1086       }
+1087     }
+1088   }
+1089 }
+
+
